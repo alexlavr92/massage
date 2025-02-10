@@ -426,6 +426,17 @@ jQuery(document).ready(function ($) {
         // console.log(AddedCard)
     }
 
+
+    function EmptyFavoritesInit() {
+        $('body').find('.favorites-empty-wpapper').fadeIn({
+            complete: function () {
+                $(this).addClass('active')
+            }
+        })
+    }
+
+    if (!$('.favorites .catalog-items').length) EmptyFavoritesInit()
+
     // $('body').on('click', '.cart-item .btn-delete', function (e) {
     //     e.preventDefault()
     //     const $this = $(this)
@@ -445,6 +456,24 @@ jQuery(document).ready(function ($) {
     //     })
     // })
 
+
+
+    $('body').on('click', '.favorites .catalog-item .btn-delete', function (e) {
+        e.preventDefault()
+        FavoritesDelete($(this))
+    })
+
+
+    function FavoritesDelete(BtnElem) {
+        // console.log(CatalogItemsLength)
+        BtnElem.closest('.catalog-item').fadeOut({
+            complete: function () {
+                $(this).remove()
+                const CatalogItemsLength = $('body').find('.favorites .catalog-item').length
+                if (CatalogItemsLength == 0) EmptyFavoritesInit()
+            }
+        })
+    }
 }) // end ready
 
 

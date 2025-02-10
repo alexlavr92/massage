@@ -1,0 +1,56 @@
+.favorites {
+    .btn-delete {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 1.1rem;
+        height: 1.1rem;
+        background-image: url(../media/icons/delete.svg);
+        @include bg-style;
+        transition: $transition;
+        background-size: contain;
+    }
+}
+
+.cart-empty-wpapper {
+    // text-align: center;
+
+    &:not(.acitve) {
+        display: none;
+    }
+
+    .text {
+        font-size: 1.3rem;
+        padding-bottom: 20px;
+    }
+
+    .btn {
+        width: auto;
+        height: 35px;
+        line-height: 35px;
+        padding: 0 30px;
+        font-size: 1rem;
+    }
+}
+
+.favorites-empty-wpapper {
+    // text-align: center;
+
+    &:not(.active) {
+        display: none;
+    }
+
+    .text {
+        font-size: 1.3rem;
+        padding-bottom: 20px;
+        line-height: 150%;
+    }
+
+    .btn {
+        width: auto;
+        height: 35px;
+        line-height: 35px;
+        padding: 0 30px;
+        font-size: 1rem;
+    }
+}
