@@ -737,6 +737,25 @@ header {
   font-size: 1.4rem;
   font-weight: bold;
   margin-top: 20px;
+  position: relative;
+}
+.card .price-card .btn-favorites {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url(../media/icons/heart-white.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.card .price-card .btn-favorites.active {
+  background-image: url(../media/icons/heart-active.svg);
 }
 .card .descript-card {
   margin: 30px 0;

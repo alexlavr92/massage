@@ -43,6 +43,24 @@
         font-size: 1.4rem;
         font-weight: $font-bold;
         margin-top: 20px;
+        position: relative;
+
+
+        .btn-favorites {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            background-image: url(../media/icons/heart-white.svg);
+            @include bg-style;
+            transition: $transition;
+
+            &.active {
+                background-image: url(../media/icons/heart-active.svg);
+            }
+        }
     }
 
     .descript-card {
