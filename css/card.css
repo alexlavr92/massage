@@ -741,14 +741,18 @@ header {
 }
 .card .price-card .btn-favorites {
   position: absolute;
-  top: 1px;
+  top: 50%;
   right: 0;
-  width: 1.5rem;
-  height: 1.5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 1.1rem;
+  height: 1.1rem;
   background-image: url(../media/icons/heart-white.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .card .price-card .btn-favorites.active {
   background-image: url(../media/icons/heart-active.svg);

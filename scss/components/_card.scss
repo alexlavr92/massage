@@ -48,14 +48,14 @@
 
         .btn-favorites {
             position: absolute;
-            top: 1px;
+            top: 50%;
             right: 0;
-            // transform: translateY(-50%);
-            width: 1.5rem;
-            height: 1.5rem;
+            transform: translateY(-50%);
+            width: 1.1rem;
+            height: 1.1rem;
             background-image: url(../media/icons/heart-white.svg);
             @include bg-style;
-            // transition: $transition;
+            transition: $transition;
 
             &.active {
                 background-image: url(../media/icons/heart-active.svg);

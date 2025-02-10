@@ -795,12 +795,14 @@ header {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.1rem;
+  height: 1.1rem;
   background-image: url(../media/icons/heart-white.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .catalog-item .btn-favorites.active {
   background-image: url(../media/icons/heart-active.svg);
