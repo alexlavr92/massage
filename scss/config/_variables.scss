@@ -1,0 +1,36 @@
+// TYPOGRAPHY
+// ---------------------------------------------------------------
+$font-body: "HelveticaNeueCyr";
+// $font-title: "Doorman";
+$font-normal: normal;
+$font-medium: 500;
+$font-light: 300;
+$font-semibold: 600;
+$font-bold: bold;
+$font-title: 'Open Sans';
+// $font-tertiary: "Oswald", sans-serif;
+
+$min-font-size: 14;
+$max-font-size: 24;
+// $root-font-size: 16;
+$body-font-size: calcFluidFontSize($min-font-size, $max-font-size, 320, 1920, px);
+$body-line-height: 140;
+
+
+// COLORS
+$color-bg: linear-gradient(180deg, #000 0%, #330960 100%);
+
+
+$color-text-main: #FFFFFF;
+$color-btn: #1E2083;
+// ---------------------------------------------------------------
+
+$placeholder-color: rgba(29, 36, 42, 0.7);
+
+// Animation
+// ---------------------------------------------------------------
+
+$transition: all .4s ease;
+
+// Box Sizing
+$box-border: border-box;

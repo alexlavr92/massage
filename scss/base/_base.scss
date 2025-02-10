@@ -1,0 +1,181 @@
+// Global CSS
+
+* {
+    box-sizing: $box-border;
+}
+
+html {
+    font-size: $body-font-size;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.rub {
+    text-transform: lowercase;
+    font-family: 'als_rublregular';
+}
+
+body {
+    background: $color-bg;
+    color: $color-text-main;
+    font-family: $font-body;
+    font-weight: $font-normal;
+    // position: relative;
+    -webkit-overflow-scrolling: touch;
+    font-size: 1rem;
+    -webkit-tap-highlight-color: transparent;
+    // -webkit-touch-callout: none;
+    // -webkit-user-select: none;
+    //font-size: $body-font-size + 0px;
+    line-height: $body-line-height + '%';
+    margin: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    @include flex-column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    padding: 30px 0;
+    padding-bottom: 5rem;
+}
+
+section {
+    width: 100%;
+
+
+}
+
+
+.new-container {
+    width: 100%;
+    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 767px;
+}
+
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    transition: $transition;
+    color: inherit;
+}
+
+
+
+
+.heading {
+    font-family: $font-title;
+}
+
+
+.btn {
+    text-align: center;
+    font-size: .8rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    transition: $transition;
+
+    &.btn-default {
+        background: $color-btn;
+        box-shadow: inset 0 0 4px 0 rgba(255, 255, 255, 0.1);
+
+        color: $color-text-main;
+
+        &:active,
+        &:hover {
+            box-shadow: inset 0 0 4px 0 rgba(255, 255, 255, 0.5);
+        }
+    }
+}
+
+.link {}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1,
+.h1 {
+    font-weight: $font-bold;
+    font-size: 1.8rem;
+    line-height: 90%;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+
+
+h2 {}
+
+// h3 {}
+
+h4 {}
+
+
+input[type="radio"],
+input[type="file"],
+input[type="checkbox"] {
+    display: none;
+}
+
+
+// body::-webkit-scrollbar {
+//     width: 10px;
+//     /* ширина scrollbar */
+// }
+
+// body::-webkit-scrollbar-track {
+//     background: #F2EFE5;
+//     /* цвет дорожки */
+// }
+
+// body::-webkit-scrollbar-thumb {
+//     background-color: #80766F;
+//     /* цвет плашки */
+//     border-radius: 3px;
+//     /* закругления плашки */
+//     /* padding вокруг плашки */
+// }
+
+
+
+
+
+.mobile-only {
+    @media screen and (min-width: 1200px) {
+        display: none;
+    }
+}
+
+
+// End Global CSS

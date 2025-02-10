@@ -1,0 +1,23 @@
+/*
+Name: 			card.css
+Written by: 	Lavrinenko Aleksandr
+Theme Version:	1.0
+*/
+
+// COMMON IMPORTS
+@import "config/imports";
+
+// HELPERS
+@import "base/helpers";
+
+// BASE
+@import "base/base";
+
+// footer
+@import "base/header";
+
+// catalog
+@import "components/card";
+
+// footer
+@import "base/footer";
