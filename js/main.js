@@ -357,9 +357,8 @@ jQuery(document).ready(function ($) {
                     }
                     ClearCartInfo($(this))
                 }
-                if ($(this).closest('.cart-item').length) {
+                if ($(this).closest('.cart-item').length && $(this).hasClass('active')) {
                     DeleteCartItem($(this))
-
                 }
             })
             if (options.deleteBtn) {
