@@ -749,8 +749,6 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
 }
 .card .price-card .btn-favorites.active {
   background-image: url(../media/icons/heart-active.svg);

@@ -92,7 +92,7 @@
         height: 1.5rem;
         background-image: url(../media/icons/heart-white.svg);
         @include bg-style;
-        transition: $transition;
+        // transition: $transition;
 
         &.active {
             background-image: url(../media/icons/heart-active.svg);
