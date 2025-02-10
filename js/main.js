@@ -268,12 +268,13 @@ jQuery(document).ready(function ($) {
     //----------------------//
 
 
-    const CountHours = {
-        defaultOptions: {
-            countWrapper: $('.added-card')
-        },
-        init: function (options) {
-            var options = $.extend(this.defaultOptions, options)
+    function CountHours(countWrapper) {
+        this.defaultOptions = {
+            countWrapper: countWrapper
+        }
+        this.init = function () {
+            var options = this.defaultOptions
+            // console.log(options)
             options.minus = options.countWrapper.find('.control.--min')
             options.plus = options.countWrapper.find('.control.--plus')
             options.count = options.countWrapper.find('.count')
@@ -283,10 +284,14 @@ jQuery(document).ready(function ($) {
             options.priceDiscount = parseInt(options.countWrapper.find('.finally-price').attr('data-discount'))
             options.cartWrapper = $('body').find('.header-nav_link.--cart')
             options.cardID = options.cartWrapper[0].cardID
-            console.log(options)
+
+            if (options.countWrapper.closest('.cart-item').length)
+                options.deleteBtn = options.countWrapper.closest('.cart-item').find('.btn-delete')
+            // console.log(options)
             this.events(options)
-        },
-        events: function (options) {
+            console.log(options)
+        }
+        this.events = function (options) {
 
             // функция расчёта стоимости заказа
             const EditCount = function (state) {
@@ -332,12 +337,13 @@ jQuery(document).ready(function ($) {
                 EditCount('plus')
             })
             options.btnAdded.click(function (e) {
-                if ($(this).hasClass('active')) {
+                if ($(this).hasClass('active') && !$(this).closest('.cart-item').length) {
                     e.preventDefault()
                     const CurrentCardId = $('body').find('section.card').attr('data-id')
                     if (!options.cardID.includes(CurrentCardId)) {
                         options.cardID.push(CurrentCardId)
-                        console.log(options.cartWrapper)
+                        console.log(options.cardID)
+                        // console.log(options.cartWrapper)
                         let countCart
                         if (!options.cartWrapper.find('.count').length) {
                             countCart = "<span class='count'></span>"
@@ -351,7 +357,44 @@ jQuery(document).ready(function ($) {
                     }
                     ClearCartInfo($(this))
                 }
+                if ($(this).closest('.cart-item').length) {
+                    DeleteCartItem($(this))
+
+                }
             })
+            if (options.deleteBtn) {
+                // console.log(options.deleteBtn)
+                options.deleteBtn.click(function (e) {
+                    DeleteCartItem($(this))
+                    // if ('')
+                })
+            }
+            function DeleteCartItem(ActionBtn) {
+                ActionBtn.closest('.cart-item').fadeOut({
+                    complete: function () {
+                        const CurrentCardId = $(this).attr('id')
+                        if (options.cardID.includes(CurrentCardId)) {
+                            options.cardID = options.cardID.filter(function (el) {
+                                return !CurrentCardId.includes(el);
+                            });
+                        }
+                        $(this).remove()
+                        if (options.cartWrapper.find('.count').length) {
+                            let Count = parseInt(options.cartWrapper.find('.count').text())
+                            // console.log(Count)
+                            Count == 1
+                                ? options.cartWrapper.find('.count').remove()
+                                : Count = Count - 1
+                            // console.log(Count)
+                            options.cartWrapper.find('.count').text(Count)
+                        }
+                        if (!$('body').find('.cart-item').length) {
+                            EmptyCartInit()
+                        }
+                    }
+                })
+
+            }
             function ClearCartInfo(AddedBtn) {
                 AddedBtn.removeClass('active')
                 options.count.text('0')
@@ -364,10 +407,43 @@ jQuery(document).ready(function ($) {
 
     }
 
-    if ($('.added-card').length)
-        CountHours.init({
-            countWrapper: $('.added-card')
+    function EmptyCartInit() {
+        $('body').find('.cart-empty-wpapper').fadeIn({
+            complete: function () {
+                $(this).addClass('active')
+            }
         })
+    }
+
+
+    if ($('.added-card').length) {
+        let AddedCard = []
+        $('.added-card').each(function (index, elem) {
+            AddedCard[index] = new CountHours($(elem))
+            AddedCard[index].init()
+        })
+        // console.log(AddedCard)
+    }
+
+    // $('body').on('click', '.cart-item .btn-delete', function (e) {
+    //     e.preventDefault()
+    //     const $this = $(this)
+    //     $(this).closest('.cart-item').fadeOut({
+    //         complete: function () {
+    //             $(this).remove()
+    //             if (options.cartWrapper.find('.count').length) {
+    //                 let Count = parseInt(options.cartWrapper.find('.count').text())
+    //                 // console.log(Count)
+    //                 Count == 1
+    //                     ? options.cartWrapper.find('.count').remove()
+    //                     : Count = Count - 1
+    //                 // console.log(Count)
+    //                 options.cartWrapper.find('.count').text(Count)
+    //             }
+    //         }
+    //     })
+    // })
+
 }) // end ready
 
 

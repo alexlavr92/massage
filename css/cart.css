@@ -994,8 +994,8 @@ header {
 }
 .cart-item .btn-delete {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 2px;
+  right: 0;
   width: 1.1rem;
   height: 1.1rem;
   background-image: url(../media/icons/delete.svg);
@@ -1004,4 +1004,22 @@ header {
   background-size: cover;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+.cart-item:not(:first-child) {
+  margin-top: 40px;
+}
+
+.cart-empty-wpapper:not(.acitve) {
+  display: none;
+}
+.cart-empty-wpapper .text {
+  font-size: 1.3rem;
+  padding-bottom: 20px;
+}
+.cart-empty-wpapper .btn {
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: 1rem;
 }/*# sourceMappingURL=cart.css.map */

@@ -44,6 +44,7 @@
                         <span>Избранное</span>
                     </a>
                     <a href="javascript: void(0)" class="header-nav_link flex-block --cart">
+                        <span class="count">2</span>
                         <img src="./media/icons/car.svg" alt="">
                         <span>Корзина</span>
                     </a>
@@ -81,12 +82,39 @@
                                     <div class="finally-price" data-price="20000" data-discount="25"><span
                                             class="this-number">40000</span> <span class="rub">q</span></div>
                                 </div>
-                                <a href="javascript: void(0)" class="btn btn-added active">Добавить в корзину</a>
+                                <a href="javascript: void(0)" class="btn btn-added active">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item flex-block" id="2">
+                        <a href="javascript: void(0)" class="btn-delete"></a>
+                        <div class="img-wrapper" style="background-image: url('./media/img/catalog/img2.jpg');">
+                            <!-- <img src="./media/img/catalog/img1.jpg" alt=""> -->
+                        </div>
+                        <div class="descript flex-block">
+                            <div class="title">Ирен</div>
+                            <div class="added-card flex-block">
+                                <div class="added-card_top flex-block">
+                                    <div class="count-wrapper">
+                                        <div class="title">Кол-во часов</div>
+                                        <div class="count-wrapper_inner flex-block">
+                                            <div class="control --min"></div>
+                                            <div class="count"><span>3</span></div>
+                                            <div class="control --plus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="finally-price" data-price="20000" data-discount="25"><span
+                                            class="this-number">40000</span> <span class="rub">q</span></div>
+                                </div>
+                                <a href="javascript: void(0)" class="btn btn-added active">Забронировать</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <div class="cart-empty-wpapper">
+                    <div class="text">Ваша корзина пуста!</div>
+                    <a href="javascript: void(0)" class="btn btn-default">Перейти в каталог</a>
+                </div>
             </div>
         </section>
     </main>
