@@ -62,6 +62,7 @@
         background-image: url(../media/icons/delete.svg);
         @include bg-style;
         transition: $transition;
+        background-size: contain;
     }
 
     &:not(:first-child) {
@@ -83,9 +84,35 @@
 
     .btn {
         width: auto;
-        height: 40px;
-        line-height: 40px;
+        height: 35px;
+        line-height: 35px;
         padding: 0 30px;
         font-size: 1rem;
+    }
+}
+
+.last-views-wrapper {
+    margin-top: 40px;
+    padding-top: 30px;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 20px);
+        height: 1px;
+        background: rgba($color-text-main, .2);
+    }
+
+    h2 {
+        padding-bottom: 0;
+    }
+
+    .btn {
+        height: 35px;
+        line-height: 35px;
     }
 }

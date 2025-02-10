@@ -83,8 +83,10 @@ a {
 
 .btn {
     text-align: center;
-    font-size: .8rem;
-    padding: 5px 14px;
+    font-size: 1rem;
+    padding: 0 14px;
+    height: 40px;
+    line-height: 40px;
     border-radius: 20px;
     transition: $transition;
 
@@ -135,7 +137,11 @@ h1,
 
 
 
-h2 {}
+h2 {
+    font-weight: $font-bold;
+    font-size: 1.2rem;
+    padding-bottom: 30px;
+}
 
 // h3 {}
 

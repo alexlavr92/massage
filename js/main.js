@@ -414,6 +414,8 @@ jQuery(document).ready(function ($) {
         })
     }
 
+    if (!$('.cart-items_wrapper').length) EmptyCartInit()
+
 
     if ($('.added-card').length) {
         let AddedCard = []
