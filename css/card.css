@@ -741,10 +741,8 @@ header {
 }
 .card .price-card .btn-favorites {
   position: absolute;
-  top: 50%;
+  top: 1px;
   right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   width: 1.5rem;
   height: 1.5rem;
   background-image: url(../media/icons/heart-white.svg);
