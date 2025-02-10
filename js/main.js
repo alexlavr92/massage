@@ -289,7 +289,7 @@ jQuery(document).ready(function ($) {
                 options.deleteBtn = options.countWrapper.closest('.cart-item').find('.btn-delete')
             // console.log(options)
             this.events(options)
-            console.log(options)
+            // console.log(options)
         }
         this.events = function (options) {
 
@@ -436,26 +436,6 @@ jQuery(document).ready(function ($) {
     }
 
     if (!$('.favorites .catalog-items').length) EmptyFavoritesInit()
-
-    // $('body').on('click', '.cart-item .btn-delete', function (e) {
-    //     e.preventDefault()
-    //     const $this = $(this)
-    //     $(this).closest('.cart-item').fadeOut({
-    //         complete: function () {
-    //             $(this).remove()
-    //             if (options.cartWrapper.find('.count').length) {
-    //                 let Count = parseInt(options.cartWrapper.find('.count').text())
-    //                 // console.log(Count)
-    //                 Count == 1
-    //                     ? options.cartWrapper.find('.count').remove()
-    //                     : Count = Count - 1
-    //                 // console.log(Count)
-    //                 options.cartWrapper.find('.count').text(Count)
-    //             }
-    //         }
-    //     })
-    // })
-
 
 
     $('body').on('click', '.favorites .catalog-item .btn-delete', function (e) {
