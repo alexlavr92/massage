@@ -1,0 +1,73 @@
+.profile {
+    h1 {
+        padding-bottom: 10px
+    }
+
+    .profile-items {
+        // gap: 20px;
+        @include flex-column;
+    }
+
+    .profile-item {
+        position: relative;
+        font-weight: 500;
+        font-size: .8rem;
+        padding: 20px 0;
+        padding-left: 40px;
+        width: 100%;
+
+        &:not(:first-child) {
+            // margin-top: 20px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: calc(100% + 20px);
+                left: 50%;
+                transform: translateX(-50%);
+                height: 1px;
+                background-color: rgba($color-text-main, .3);
+            }
+        }
+
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            @include bg-style;
+            background-size: contain;
+            background-position: center;
+        }
+
+        &.--name:before {
+            background-image: url('../media/icons/profile-fill.svg');
+        }
+
+        &.--phone:before {
+            background-image: url('../media/icons/phone-profile.svg');
+        }
+
+        &.--orders:before {
+            background-image: url('../media/icons/orders.svg');
+        }
+
+        &.--orders {
+            span {
+                position: absolute;
+                right: 5px;
+                top: 21px;
+                width: 10px;
+                height: 10px;
+                border-top: 2px solid $color-text-main;
+                border-right: 2px solid $color-text-main;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
