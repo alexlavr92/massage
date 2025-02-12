@@ -77,4 +77,10 @@
     .profile-item:before {
         margin-top: -2px;
     }
+
+    .profile-item.--orders {
+        span {
+            top: 23px;
+        }
+    }
 }

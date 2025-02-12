@@ -774,4 +774,7 @@ header {
 
 .ios.iphone.mobile .profile-item:before {
   margin-top: -2px;
+}
+.ios.iphone.mobile .profile-item.--orders span {
+  top: 23px;
 }/*# sourceMappingURL=profile.css.map */
