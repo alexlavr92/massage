@@ -770,8 +770,11 @@ header {
   border-right: 2px solid #FFFFFF;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+<<<<<<< HEAD
 }
 
 .ios.iphone.mobile .profile-item:before {
   margin-top: -2px;
+=======
+>>>>>>> 7dede4e177598434ce1323507516e27ac5ca58f2
 }/*# sourceMappingURL=profile.css.map */
