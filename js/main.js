@@ -47,6 +47,22 @@ const BlockScroll = {
 
 jQuery(document).ready(function ($) {
 
+
+    let tg = window.Telegram.WebApp;
+    console.log(tg.initData);
+
+    const tgObject = '<div class="tg-elem flex-block"></div>',
+        tg_InitData = tg
+    $(tgObject).insertBefore('h1')
+    // console.log(tg_InitData)
+    for (var key in tg_InitData) {
+        if (tg_InitData.hasOwnProperty(key)) {
+            const KeyValue = "<span>" + key + " -> " + tg_InitData[key] + "</span>"
+            $(KeyValue).appendTo('.tg-elem')
+            console.log(key + " -> " + tg_InitData[key]);
+        }
+    }
+
     const InitDefault = {
         defaultOptions: {
             cartWrapper: $('.header-nav_link.--cart')
